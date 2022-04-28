@@ -7,7 +7,7 @@
     <meta charset="utf-8"> {% if title %}
     <title> {{ title }}</title>
     {% else %}
-    <title> Welcome to the best Movie Review website </title>
+    <title> Movie Review website </title>
     {% endif %} {% block styles%} {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %}
 </head>
@@ -25,38 +25,30 @@
             </form>
 
         </div>
+        <div class="row" style="float: left;">
+            <!-- Popular movie -->
+            <h3> Popular Movies</h3>
+            <ul>
+                {{ macro.displayMovieList(popular)}}
+            </ul>
 
-        <div class="row">
-            <div class="col-md-4" style="height: 400px; width: 400px;">
-                <!-- Popular movie -->
-                <h3> Popular Movies</h3>
-                <ul>
-                    {{ macro.displayMovieList(popular)}}
-                </ul>
-                <div class="col-md-4">
-                    <!-- Upcoming movie  -->
-                    <h3> Upcoming Movies </h3>
-                    <ul>
-                        {{ macro.displayMovieList(upcoming)}}
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <!-- Now showing movie -->
-                    <h3>Now Showing</h3>
-                    <ul>
-                        {{ macro.displayMovieList(now_showing)}}
-                    </ul>
-                </div>
+            <!-- Upcoming movie  -->
+            <h3> Upcoming Movies </h3>
+            <ul>
+                {{ macro.displayMovieList(upcoming)}}
+            </ul>
 
 
-            </div>
-
-
+            <!-- Now showing movie -->
+            <h3>Now Showing</h3>
+            <ul>
+                {{ macro.displayMovieList(now_showing)}}
+            </ul>
 
         </div>
 
-
     </div>
+
     {% endblock %}
 
 </body>
