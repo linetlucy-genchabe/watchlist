@@ -15,6 +15,12 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SUBJECT_PREFIX = 'Watchlist'
+    SENDER_EMAIL = 'linetlucy21@gmail.com'
+
+    @staticmethod
+    def init_app(app):
+        pass
 
 
 class ProdConfig(Config):
